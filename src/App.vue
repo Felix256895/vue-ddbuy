@@ -4,6 +4,7 @@
   </div>
 </template>
 <script>
+// 禁止手机端扩大和缩小手势
 window.onload = function() {
   document.addEventListener("touchstart", function(event) {
     if (event.touches.length > 1) {

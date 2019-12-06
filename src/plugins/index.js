@@ -21,5 +21,17 @@ Vue.use(Divider);
 import { Grid, GridItem } from "vant";
 Vue.use(Grid).use(GridItem);
 
-// import { Toast } from "vant";
-// Vue.use(Toast);
+import { Tabbar, TabbarItem } from "vant";
+Vue.use(Tabbar).use(TabbarItem);
+
+import { Loading } from "vant";
+Vue.use(Loading);
+
+import { Swipe, SwipeItem } from "vant";
+Vue.use(Swipe).use(SwipeItem);
+
+import { Lazyload } from "vant";
+Vue.use(Lazyload);
+
+import { CountDown } from "vant";
+Vue.use(CountDown);
