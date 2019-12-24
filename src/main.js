@@ -6,6 +6,8 @@ import store from "./store";
 import waterfall from "vue-waterfall2";
 import ToTop from "components/backToTop/BackToTop";
 import Loading from "components/loading/Loading";
+import "./icons";
+import Waterfall from "vue-waterfall2";
 
 // 解决移动端点击延迟200ms的问题
 if ("addEventListener" in document) {
@@ -17,6 +19,9 @@ if ("addEventListener" in document) {
     false
   );
 }
+
+Vue.use(Waterfall);
+// 瀑布流
 
 Vue.use(waterfall);
 

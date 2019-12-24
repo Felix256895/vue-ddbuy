@@ -15,12 +15,13 @@
     >
       <van-tab v-for="item in itemsTitle" :key="item.title">
         <div slot="title">{{ item.title }}</div>
-        {{ item.title }}
+        <product-item :product_list="item.data"></product-item>
       </van-tab>
     </van-tabs>
   </div>
 </template>
 <script>
+import ProductItem from "./ProductItem";
 export default {
   name: "TabbarGoodsItem",
   props: {
@@ -30,6 +31,9 @@ export default {
     flashSaleList: {
       type: Array
     }
+  },
+  components: {
+    ProductItem
   },
   data() {
     return {

@@ -38,7 +38,10 @@ const routes = [
       {
         path: "category",
         name: "category",
-        component: Category
+        component: Category,
+        meta: {
+          keepAlive: true
+        }
       },
       {
         path: "eat",
