@@ -35,3 +35,9 @@ Vue.use(Lazyload);
 
 import { CountDown } from "vant";
 Vue.use(CountDown);
+
+import { Checkbox, CheckboxGroup } from "vant";
+Vue.use(Checkbox).use(CheckboxGroup);
+
+import { SubmitBar } from "vant";
+Vue.use(SubmitBar);

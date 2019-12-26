@@ -5,7 +5,7 @@
         <li
           class="flashFood__list__item"
           v-for="(item, index) in flashSaleList"
-          :key="item.id"
+          :key="item.id + index"
           ref="productItem"
         >
           <img class="item__img" v-lazy="item.small_image" alt />

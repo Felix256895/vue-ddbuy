@@ -48,7 +48,6 @@ export default {
   activated() {
     this.$nextTick(() => {
       const currentIndex = this.$route.params.currentIndex;
-      console.log(currentIndex);
       if (currentIndex >= 0) {
         this.handleLeft(currentIndex + 1);
       }
@@ -57,12 +56,10 @@ export default {
   methods: {
     async initData() {
       const leftData = await getCategoryData();
-      console.log(leftData);
       if (leftData.success) {
         this.categories = leftData.data.cate;
       }
       const rightData = await getCategoryDetail("/lk001");
-      console.log(rightData);
       if (rightData.success) {
         this.categoryDetail = rightData.data.cate;
       }
