@@ -30,4 +30,19 @@ function remove(key) {
   store.removeItem(key);
 }
 
-export { setStore, getStore, remove };
+/**
+ * 处理电话号码
+ * @param {*} value
+ */
+function phone(value) {
+  const mobile = String(value);
+  const reg = /^(\d{3})\d{4}(\d{4})$/;
+  return mobile.replace(reg, "$1****$2");
+}
+
+/**
+ * 版本号
+ */
+const VERSION = `1.0.0`;
+
+export { setStore, getStore, remove, VERSION, phone };

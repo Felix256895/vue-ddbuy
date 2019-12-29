@@ -24,9 +24,9 @@
       </van-tabbar-item>
     </van-tabbar>
     <keep-alive>
-      <router-view v-if="$route.meta.keepAlive" />
+      <router-view v-if="$route.meta.keepAlive"></router-view>
     </keep-alive>
-    <router-view v-if="!$route.meta.keepAlive" />
+    <router-view v-if="!$route.meta.keepAlive"></router-view>
   </div>
 </template>
 <script>
@@ -124,20 +124,27 @@ export default {
 <style lang="stylus" scoped>
 .router-slider-enter-active, .router-slider-leave-active
   transition: all 0.3s
+
 .router-slider-enter, .router-slider-leave-active
   transform: translate3d(2rem, 0, 0)
   opacity: 0
+
 @keyframes mymove
   0%
     transform: scale(1)
+
   25%
     transform: scale(0.8)
+
   50%
     transform: scale(1.1)
+
   75%
     transform: scale(0.9)
+
   100%
     transform: scale(1)
+
 .moveToCart
   animation: mymove 0.5s ease-in-out
 </style>

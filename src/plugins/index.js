@@ -41,3 +41,19 @@ Vue.use(Checkbox).use(CheckboxGroup);
 
 import { SubmitBar } from "vant";
 Vue.use(SubmitBar);
+
+import { NavBar } from "vant";
+Vue.use(NavBar);
+
+import { Tag } from "vant";
+Vue.use(Tag);
+
+import { Popup } from "vant";
+Vue.use(Popup);
+
+import { RadioGroup, Radio } from "vant";
+Vue.use(RadioGroup);
+Vue.use(Radio);
+
+import { DatetimePicker } from "vant";
+Vue.use(DatetimePicker);

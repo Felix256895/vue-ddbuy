@@ -7,6 +7,8 @@ const Category = () => import("views/category/Category");
 const Eat = () => import("views/eat/Eat");
 const Cart = () => import("views/cart/Cart");
 const Mine = () => import("views/mine/Mine");
+const PersonInfo = () => import("views/mine/personInfo");
+const EditNickName = () => import("views/mine/editNickName");
 
 const Login = () => import("views/login/Login");
 
@@ -15,7 +17,10 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
-    redirect: "/dashboard"
+    redirect: "/dashboard",
+    meta: {
+      keepAlive: true
+    }
   },
   {
     path: "/dashboard",
@@ -60,7 +65,21 @@ const routes = [
       {
         path: "mine",
         name: "mine",
-        component: Mine
+        component: Mine,
+        children: [
+          {
+            path: "personInfo",
+            name: "personInfo",
+            component: PersonInfo,
+            children: [
+              {
+                path: "editNickName",
+                name: "editNickName",
+                component: EditNickName
+              }
+            ]
+          }
+        ]
       }
     ]
   },
