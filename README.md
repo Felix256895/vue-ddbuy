@@ -2,10 +2,10 @@
 
 ```bash
 # clone project to local
-git clone https://github.com/Geek-James/ddBuy.git
+git clone https://github.com/Felix-lucky/vue-ddbuy.git
 
 # go to project catalog
-cd ddbuy
+cd vue-ddbuy
 
 # install node package
 npm install
