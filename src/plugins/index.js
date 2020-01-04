@@ -57,3 +57,12 @@ Vue.use(Radio);
 
 import { DatetimePicker } from "vant";
 Vue.use(DatetimePicker);
+
+import { CouponCell, CouponList } from "vant";
+Vue.use(CouponCell).use(CouponList);
+
+import { AddressList } from "vant";
+Vue.use(AddressList);
+
+import { AddressEdit } from "vant";
+Vue.use(AddressEdit);

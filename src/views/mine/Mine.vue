@@ -38,13 +38,20 @@
       </van-cell>
     </van-cell-group>
     <van-cell-group>
-      <van-cell title="我的订单" icon="label" value="查看全部订单" is-link />
+      <van-cell
+        title="我的订单"
+        icon="label"
+        value="查看全部订单"
+        @click="goMyOrder(-1)"
+        is-link
+      />
       <van-grid :border="false">
         <van-grid-item
           v-for="(order, index) in orderData"
           :key="index"
           :icon="order.icon"
           :text="order.title"
+          @click="goMyOrder(index)"
         />
       </van-grid>
     </van-cell-group>
@@ -54,8 +61,14 @@
         icon="gold-coin"
         :value="userInfo.token ? '2张' : ''"
         is-link
+        @click="goCouponList"
       />
-      <van-cell title="我的收货地址" icon="todo-list" is-link />
+      <van-cell
+        title="我的收货地址"
+        icon="todo-list"
+        is-link
+        @click="goMyAddress"
+      />
     </van-cell-group>
     <van-cell-group style="margin-top: 0.5rem">
       <van-cell icon="vip-card" is-link>
@@ -130,6 +143,28 @@ export default {
      */
     goPersonInfo() {
       this.$router.push({ name: "personInfo" });
+    },
+    goMyOrder(index) {
+      if (!this.userInfo.token) {
+        return this.login();
+      }
+      if (index === 3) {
+        console.log(index);
+      } else {
+        this.$router.push({ name: "myOrder", params: { active: index + 1 } });
+      }
+    },
+    goCouponList() {
+      if (!this.userInfo.token) {
+        return this.login();
+      }
+      this.$router.push({ name: "couponList" });
+    },
+    goMyAddress() {
+      if (!this.userInfo.token) {
+        return this.login();
+      }
+      this.$router.push("/order/myAddress");
     }
   }
 };

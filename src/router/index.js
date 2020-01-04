@@ -9,9 +9,13 @@ const Cart = () => import("views/cart/Cart");
 const Mine = () => import("views/mine/Mine");
 const PersonInfo = () => import("views/mine/personInfo");
 const EditNickName = () => import("views/mine/editNickName");
+const MyOrder = () => import("views/mine/myOrder");
+const CouponList = () => import("views/mine/couponList");
+const Order = () => import("views/order");
+const MyAddress = () => import("views/order/myAddress");
+const AddAddress = () => import("views/order/myAddress/addAddress");
 
 const Login = () => import("views/login/Login");
-
 Vue.use(VueRouter);
 
 const routes = [
@@ -78,6 +82,35 @@ const routes = [
                 component: EditNickName
               }
             ]
+          },
+          {
+            path: "myOrder",
+            name: "myOrder",
+            component: MyOrder
+          },
+          {
+            path: "couponList",
+            name: "couponList",
+            component: CouponList
+          }
+        ]
+      }
+    ]
+  },
+  {
+    path: "/order",
+    name: "order",
+    component: Order,
+    children: [
+      {
+        path: "myAddress",
+        name: "myAddress",
+        component: MyAddress,
+        children: [
+          {
+            path: "addAddress",
+            name: "addAddress",
+            component: AddAddress
           }
         ]
       }
