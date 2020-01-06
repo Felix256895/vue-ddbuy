@@ -66,3 +66,11 @@ Vue.use(AddressList);
 
 import { AddressEdit } from "vant";
 Vue.use(AddressEdit);
+
+import { ContactCard, ContactList, ContactEdit } from "vant";
+Vue.use(ContactCard)
+  .use(ContactList)
+  .use(ContactEdit);
+
+import { Switch } from "vant";
+Vue.use(Switch);
