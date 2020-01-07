@@ -43,6 +43,7 @@
               class="list__item"
               v-for="(val, key) in item.products"
               :key="key"
+              @click.stop="goToGoodsDetail(val)"
             >
               <p class="list__item__img">
                 <img v-lazy="val.small_image" alt />
@@ -165,22 +166,22 @@ export default {
       this.currentIndex = index;
       this.subTitleClick(index);
       this.menuDown = false;
+    },
+    goToGoodsDetail(goods) {
+      this.$router.push({
+        name: "goodsDetail",
+        // 给商品详情页面传递数据
+        params: {
+          id: goods.id,
+          name: goods.name,
+          small_image: goods.small_image,
+          price: goods.price,
+          spec: goods.spec,
+          total_sales: goods.total_sales,
+          origin_price: goods.origin_price
+        }
+      });
     }
-    // goToGoodsDetail(goods) {
-    //   this.$router.push({
-    //     name: "goodsDetail",
-    //     // 给商品详情页面传递数据
-    //     query: {
-    //       id: goods.id,
-    //       name: goods.name,
-    //       small_image: goods.small_image,
-    //       price: goods.price,
-    //       spec: goods.spec,
-    //       total_sales: goods.total_sales,
-    //       origin_price: goods.origin_price
-    //     }
-    //   });
-    // }
   },
   mounted() {
     this.$nextTick(() => {

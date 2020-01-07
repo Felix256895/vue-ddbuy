@@ -7,6 +7,7 @@
           v-for="(item, index) in flashSaleList"
           :key="item.id + index"
           ref="productItem"
+          @click.stop="goToGoodsDetail(item)"
         >
           <img class="item__img" v-lazy="item.small_image" alt />
           <p class="item__name">{{ item.name }}</p>
@@ -126,6 +127,22 @@ export default {
       buycar.classList.add("moveTocart");
       this.timer = setTimeout(() => {
         buycar.classList.remove("moveTocart");
+      });
+    },
+    goToGoodsDetail(goods) {
+      this.$router.push({
+        name: "goodsDetail",
+        // 给商品详情页面传递数据
+        params: {
+          id: goods.id,
+          name: goods.name,
+          small_image: goods.small_image,
+          price: goods.price,
+          spec: goods.spec,
+          total_sales: goods.total_sales,
+          origin_price: goods.origin_price,
+          isFlash: true
+        }
       });
     }
   },

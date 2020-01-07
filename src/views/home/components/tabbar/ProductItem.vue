@@ -1,6 +1,11 @@
 <template>
   <div class="product">
-    <div class="product__item" v-for="item in product_list" :key="item.id">
+    <div
+      class="product__item"
+      v-for="item in product_list"
+      :key="item.id"
+      @click.stop="goToGoodsDetail(item)"
+    >
       <img v-lazy="item.small_image" alt="" />
       <p class="product__item__title">{{ item.name }}</p>
       <p class="product__item__subtitle">{{ item.spec }}</p>
@@ -33,7 +38,22 @@ export default {
   methods: {
     ...mapMutations({
       addCart: "ADD_TO_CART"
-    })
+    }),
+    goToGoodsDetail(goods) {
+      // 跳转到商品详情页面并且传值
+      this.$router.push({
+        name: "goodsDetail",
+        params: {
+          id: goods.id,
+          name: goods.name,
+          small_image: goods.small_image,
+          price: goods.price,
+          spec: goods.spec,
+          total_sales: goods.total_sales,
+          origin_price: goods.origin_price
+        }
+      });
+    }
   }
 };
 </script>

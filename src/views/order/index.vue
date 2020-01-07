@@ -32,7 +32,7 @@
         :showDateTimePopView="showDateTimePopView"
         @changeData="changeData(arguments)"
       />
-      <div class="wrapper">
+      <div class="wrapper" @click="goGoodsList">
         <div class="wrapperBox" ref="wrapperBox">
           <ul class="wrapperList" ref="wrapperList">
             <li
@@ -330,6 +330,10 @@ export default {
           duration: 800
         });
       }
+    },
+    goGoodsList() {
+      console.log(123);
+      this.$router.push({ name: "orderGoodsList" });
     }
   },
   mounted() {
@@ -367,11 +371,11 @@ export default {
   position: relative
 .wrapperBox
   width: 100%
+  overflow: hidden
 .wrapperList
   display: flex
   height: 4rem
   align-items: center
-  overflow: hidden
   white-space: nowrap
   img
     width: 3rem

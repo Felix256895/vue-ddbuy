@@ -14,6 +14,8 @@ const CouponList = () => import("views/mine/couponList");
 const Order = () => import("views/order");
 const MyAddress = () => import("views/order/myAddress");
 const AddAddress = () => import("views/order/myAddress/addAddress");
+const OrderGoodsList = () => import("views/order/orderGoodsList");
+const GoodsDetail = () => import("components/goodsDetail");
 
 const Login = () => import("views/login/Login");
 Vue.use(VueRouter);
@@ -64,7 +66,10 @@ const routes = [
       {
         path: "cart",
         name: "cart",
-        component: Cart
+        component: Cart,
+        meta: {
+          keepAlive: true
+        }
       },
       {
         path: "mine",
@@ -113,8 +118,18 @@ const routes = [
             component: AddAddress
           }
         ]
+      },
+      {
+        path: "orderGoodsList",
+        name: "orderGoodsList",
+        component: OrderGoodsList
       }
     ]
+  },
+  {
+    path: "/goodsDetail",
+    name: "goodsDetail",
+    component: GoodsDetail
   },
   {
     path: "/login",
