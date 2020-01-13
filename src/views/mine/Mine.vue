@@ -71,7 +71,7 @@
       />
     </van-cell-group>
     <van-cell-group style="margin-top: 0.5rem">
-      <van-cell icon="vip-card" is-link>
+      <van-cell icon="vip-card" is-link @click="goMyVip">
         <template>
           <span>我的绿卡</span>
           <van-tag :round="true" type="danger">NEW</van-tag>
@@ -165,6 +165,12 @@ export default {
         return this.login();
       }
       this.$router.push("/order/myAddress");
+    },
+    goMyVip() {
+      if (!this.userInfo.token) {
+        return this.login();
+      }
+      this.$router.push({ name: "myVip" });
     }
   }
 };

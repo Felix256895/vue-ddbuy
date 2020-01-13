@@ -76,7 +76,9 @@ import { Switch } from "vant";
 Vue.use(Switch);
 
 import { GoodsAction, GoodsActionIcon, GoodsActionButton } from "vant";
-
 Vue.use(GoodsAction)
   .use(GoodsActionIcon)
   .use(GoodsActionButton);
+
+import { Sticky } from "vant";
+Vue.use(Sticky);

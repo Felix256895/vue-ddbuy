@@ -16,6 +16,8 @@ const MyAddress = () => import("views/order/myAddress");
 const AddAddress = () => import("views/order/myAddress/addAddress");
 const OrderGoodsList = () => import("views/order/orderGoodsList");
 const GoodsDetail = () => import("components/goodsDetail");
+const MyVip = () => import("views/mine/myVip");
+const VipPay = () => import("components/vipPay");
 
 const Login = () => import("views/login/Login");
 Vue.use(VueRouter);
@@ -97,6 +99,11 @@ const routes = [
             path: "couponList",
             name: "couponList",
             component: CouponList
+          },
+          {
+            path: "myVip",
+            name: "myVip",
+            component: MyVip
           }
         ]
       }
@@ -130,6 +137,11 @@ const routes = [
     path: "/goodsDetail",
     name: "goodsDetail",
     component: GoodsDetail
+  },
+  {
+    path: "/vipPay",
+    name: "vipPay",
+    component: VipPay
   },
   {
     path: "/login",
